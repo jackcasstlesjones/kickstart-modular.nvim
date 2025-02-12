@@ -68,6 +68,7 @@ return {
           --  This will expand snippets if the LSP sent a snippet.
           -- ['<C-y>'] = cmp.mapping.confirm { select = true },
           ['<Tab>'] = cmp.mapping.confirm { select = true },
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
