@@ -64,5 +64,11 @@ vim.opt.scrolloff = 10
 -- Remove animations
 vim.g.snacks_animate = false
 
+-- Ask for confirmation when quitting
+vim.opt.confirm = true
+
+-- Relative line numbers
+vim.opt.number = true -- Show line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
 
 -- vim: ts=2 sts=2 sw=2 et

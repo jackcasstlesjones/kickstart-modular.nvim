@@ -1,0 +1,28 @@
+return {
+  'EdenEast/nightfox.nvim',
+  priority = 1000, -- Ensures the colorscheme loads early
+  config = function()
+    require('nightfox').setup {
+      options = {
+        transparent = true, -- Enable transparency
+        terminal_colors = true, -- Set terminal colors
+        dim_inactive = false, -- Keep inactive panes the same
+        styles = {
+          comments = 'NONE',
+          conditionals = 'NONE',
+          constants = 'NONE',
+          functions = 'NONE',
+          keywords = 'NONE',
+          numbers = 'NONE',
+          operators = 'NONE',
+          strings = 'NONE',
+          types = 'NONE',
+          variables = 'NONE',
+        },
+      },
+    }
+
+    -- Set the colorscheme
+    vim.cmd 'colorscheme nordfox'
+  end,
+}
