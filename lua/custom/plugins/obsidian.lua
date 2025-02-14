@@ -23,10 +23,6 @@ return {
         name = 'personal',
         path = '~/obsidian/jacks-vault',
       },
-      {
-        name = 'work',
-        path = '~/vaults/work',
-      },
     },
 
     -- see below for full list of options 👇
