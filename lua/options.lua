@@ -62,7 +62,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Remove animations
-vim.g.snacks_animate = false
+-- vim.g.snacks_animate = false
 
 -- Ask for confirmation when quitting
 vim.opt.confirm = true
