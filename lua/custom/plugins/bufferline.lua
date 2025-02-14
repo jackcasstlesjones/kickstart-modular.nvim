@@ -40,7 +40,7 @@ return {
       vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
       vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
       -- Close buffer while preserving layout
-      vim.keymap.set('n', '<leader>x', function()
+      vim.keymap.set('n', '<leader>X', function()
         local current_buf = vim.api.nvim_get_current_buf()
         local last_buf = vim.fn.bufnr '#'
         -- If there's a last buffer, switch to it first
