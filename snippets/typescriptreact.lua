@@ -54,4 +54,22 @@ export default function {}({{ {} }}: {}Props) {{
       }
     )
   ),
+
+  -- Arrow function with args
+
+  s(
+    'af',
+    fmt(
+      [[
+const {} = ({}) => {{
+  {}
+}}
+]],
+      {
+        i(1, 'functionName'), -- Function name
+        i(2, 'arguments'), -- Function parameters
+        i(3, '// Function body'), -- Function body placeholder
+      }
+    )
+  ),
 }
