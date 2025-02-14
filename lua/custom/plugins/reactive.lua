@@ -1,10 +1,11 @@
 return {
   {
     'rasulomaroff/reactive.nvim',
+    enabled = true,
 
     opts = {
       builtin = {
-        cursorline = true,
+        cursorline = false,
         cursor = true,
         modemsg = true,
       },

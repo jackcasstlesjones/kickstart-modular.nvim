@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save file' })
-vim.keymap.set('n', '<leader>Q', ':qa<CR>', { desc = 'Quit ALl' })
+vim.keymap.set('n', 'Q', ':qa<CR>', { desc = 'Quit ALl' })
 
 vim.keymap.set('i', '<C-CR>', '<C-O>o', { desc = 'Insert a new line below without breaking current line' })
 
