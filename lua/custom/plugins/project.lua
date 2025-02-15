@@ -2,7 +2,7 @@ return {
 
   {
     'ahmedkhalf/project.nvim',
-    enabled = false,
+    enabled = true,
     config = function()
       require('project_nvim').setup() -- No arguments, uses defaults
 
