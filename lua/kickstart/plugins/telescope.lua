@@ -31,6 +31,13 @@ return {
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
+      -- Add the projects extension
+      require('telescope').load_extension 'projects'
+
+      -- Add the projects keymap along with your other telescope keymaps
+      vim.keymap.set('n', '<leader>p', function()
+        require('telescope').extensions.projects.projects()
+      end, { desc = 'Open Project Picker' })
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
