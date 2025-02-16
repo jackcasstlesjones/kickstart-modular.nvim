@@ -1,7 +1,7 @@
 return {
   {
     'ahmedkhalf/project.nvim',
-    enabled = true,
+    enabled = false,
     config = function()
       require('project_nvim').setup {
         -- Manual mode doesn't automatically change your root directory
@@ -35,13 +35,13 @@ return {
   },
 
   -- Load telescope extension
-  {
-    'nvim-telescope/telescope.nvim',
-    config = function()
-      require('telescope').load_extension 'projects'
-      vim.keymap.set('n', '<leader>p', function()
-        require('telescope').extensions.projects.projects()
-      end, { desc = 'Open Project Picker' })
-    end,
-  },
+  -- {
+  --   'nvim-telescope/telescope.nvim',
+  --   config = function()
+  --     require('telescope').load_extension 'projects'
+  --     vim.keymap.set('n', '<leader>p', function()
+  --       require('telescope').extensions.projects.projects()
+  --     end, { desc = 'Open Project Picker' })
+  --   end,
+  -- },
 }
