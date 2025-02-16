@@ -29,13 +29,37 @@ return {
         error 'Note title is required to create a new note!'
       end
     end,
-
-    -- note_path_func = function(spec)
-    --   -- Hardcode the vault root to ensure we reference the correct base directory.
-    --   local vault_root = vim.fn.expand '~/obsidian/jacks-vault'
-    --   -- Use the existing "Notes" folder at the vault root.
-    --   local notes_folder = vault_root .. '/Notes'
-    --   return notes_folder .. '/' .. spec.id .. '.md'
-    -- end,
   },
+  config = function(_, opts)
+    local obsidian = require 'obsidian'
+    obsidian.setup(opts)
+
+    -- Wrapper function for following links that stores the MOC source
+    local function follow_link_with_source()
+      -- Get the current note's filename (e.g. "moc-hiking.md" or "moc-travel.md")
+      local current_note = vim.fn.expand '%:t'
+      -- Only store if it starts with "moc-"
+      if current_note:match '^moc%-' then
+        vim.g.moc_source = current_note
+      else
+        vim.g.moc_source = nil
+      end
+      -- Call the Obsidian command to follow the link
+      vim.cmd 'ObsidianFollowLink'
+    end
+
+    -- Map the custom follow-link command using a function callback
+    vim.keymap.set('n', '<leader>ol', follow_link_with_source, { noremap = true, silent = true })
+
+    -- Autocommand to insert the backlink at the top of newly created Markdown files
+    vim.api.nvim_create_autocmd('BufNewFile', {
+      pattern = '*.md',
+      callback = function()
+        if vim.g.moc_source then
+          vim.api.nvim_buf_set_lines(0, 0, 0, false, { '[[' .. vim.g.moc_source .. ']]' })
+          vim.g.moc_source = nil
+        end
+      end,
+    })
+  end,
 }
