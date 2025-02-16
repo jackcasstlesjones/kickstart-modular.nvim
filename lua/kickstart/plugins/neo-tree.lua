@@ -28,13 +28,13 @@ return {
     },
     { '<leader>e', '<leader>fe', desc = 'Explorer NeoTree (Root Dir)', remap = true },
     { '<leader>E', '<leader>fE', desc = 'Explorer NeoTree (cwd)', remap = true },
-    {
-      '<leader>ge',
-      function()
-        require('neo-tree.command').execute { source = 'git_status', toggle = true }
-      end,
-      desc = 'Git Explorer',
-    },
+    -- {
+    --   '<leader>ge',
+    --   function()
+    --     require('neo-tree.command').execute { source = 'git_status', toggle = true }
+    --   end,
+    --   desc = 'Git Explorer',
+    -- },
     -- {
     --   '<leader>be',
     --   function()
