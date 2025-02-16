@@ -9,8 +9,8 @@
 
 ## File Search & Editing
 
-- `s` to use [Flash](https://github.com/folke/flash.nvim) to search text inside a file.
-- `f` or `F` replaces the default `find` motions using [eyEeliner](https://github.com/jinh0/eyeliner.nvim).
+- `s` uses [Flash](https://github.com/folke/flash.nvim) to search text inside a file.
+- `f` or `F` replaces the default `find` motions using [eyeliner](https://github.com/jinh0/eyeliner.nvim).
 - `<leader>u` to see an undo history using [telescope-undo](https://github.com/debugloop/telescope-undo.nvim).
 - `<leader>l` to insert inside the last double quote on current line (for Tailwind).
 - `<leader>d` to delete without yanking.
