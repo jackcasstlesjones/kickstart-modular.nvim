@@ -61,7 +61,7 @@ return {
       spec = {
         { '<leader>c', group = 'Code', mode = { 'n', 'x' } },
         { '<leader>d', group = 'Document' },
-        { '<leader>g', group = 'Git' },
+        -- { '<leader>g', group = 'Git' },
         { '<leader>r', group = 'Rename' },
         { '<leader>s', group = 'Search' },
         -- { '<leader>w', group = '[W]orkspace' },
