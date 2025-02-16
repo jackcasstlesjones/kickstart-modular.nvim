@@ -52,6 +52,7 @@ vim.keymap.set('i', '<C-CR>', '<C-O>o', { desc = 'Insert a new line below withou
 
 vim.keymap.set('n', '<leader>l', '$F"i<space>', { desc = 'Insert at last quote on line' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete with black hole register' })
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
+vim.keymap.set({ 'n', 'v' }, 'c', '"_c', { desc = 'Remove yanking behaviour from Change' })
 -- vim: ts=2 sts=2 sw=2 et
 --
