@@ -70,7 +70,7 @@ return {
     open_files_do_not_replace_types = { 'terminal', 'Trouble', 'trouble', 'qf', 'Outline' },
     filesystem = {
       -- bind_to_cwd = true, -- enable this to switch neo tree to new project when using project.nvim
-      bind_to_cwd = false,
+      bind_to_cwd = true,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
     },

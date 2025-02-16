@@ -1,7 +1,7 @@
 return {
   {
     'ahmedkhalf/project.nvim',
-    enabled = true,
+    enabled = false,
     config = function()
       require('project_nvim').setup {
         -- Manual mode doesn't automatically change your root directory
