@@ -3,7 +3,7 @@
 ## File Navigation
 
 - `<leader><leader>` to search files using [Smart open](https://github.com/danielfalk/smart-open.nvim) (fzf with memory).
-- `<leader>k` to browser open buffers, sorted by most recent and excluding current buffer, using [telescope](https://github.com/nvim-telescope/telescope.nvim).
+- `<leader>k` to browse open buffers, sorted by most recent and excluding current buffer, using [telescope](https://github.com/nvim-telescope/telescope.nvim).
 - `<leader>z` to open [zoxide](https://github.com/ajeetdsouza/zoxide) in Nvim using [telescope-zoxide](https://github.com/jvgrootveld/telescope-zoxide) (this uses the system-wide zoxide memory).
 - `<leader>y` to open [yazi](https://github.com/mikavilpas/yazi.nvim). `g d` then navigates to `Downloads` folder. Press `z` to search using zoxide inside yazi.
 
