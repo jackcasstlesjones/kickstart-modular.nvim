@@ -17,3 +17,16 @@
 - `c` replaces the default yanking behaviour.
 - `<leader>w` to save the current file.
 - `Q` to quit all Neovim instances.
+- Format on save, or with `<leader>mp`, using [conform](https://github.com/stevearc/conform.nvim) and Prettier.
+- Use the [emmet-language-server](https://github.com/olrtg/emmet-language-server) just like VSCode.
+
+## UI
+
+- This setup uses [noice](https://github.com/folke/noice.nvim) for UI components and popups.
+- Quitting confirmation is on, meaning you will be asked to confirm whether to save files when quitting with unsaved changes.
+- `tb` to toggle git blame using [gitsigns](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim).
+- `tm` to toggle [markview](https://github.com/OXY2DEV/markview.nvim).
+
+## Version Control
+
+- `<leader>g` for Lazygit
