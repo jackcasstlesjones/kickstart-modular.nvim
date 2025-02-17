@@ -4,6 +4,11 @@ return {
     enabled = true,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
+      -- Function to get project root
+      local function get_project_root()
+        local path = vim.fn.getcwd()
+        return vim.fn.fnamemodify(path, ':t')
+      end
       require('lualine').setup {
         options = {
           icons_enabled = true,
@@ -26,8 +31,16 @@ return {
         },
         sections = {
           lualine_a = { 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
+          lualine_b = {
+            { get_project_root }, -- Show project root directory name
+            'pwd', -- Show current working directory
+            'branch',
+            'diff',
+            'diagnostics',
+          },
+          lualine_c = {
+            'filename',
+          },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
