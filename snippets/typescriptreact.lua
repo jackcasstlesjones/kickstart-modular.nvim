@@ -72,4 +72,54 @@ const {} = ({}) => {{
       }
     )
   ),
+
+  -- useState
+  s(
+    'us',
+    fmt(
+      [[
+const [{}] = useState({})
+]],
+      {
+        i(1, 'state, setState'), -- Function name
+        i(2, 'state'), -- Function parameters
+      }
+    )
+  ),
+
+  -- useState with type
+  s(
+    'ust',
+    fmt(
+      [[
+const [{}] = useState<{}>({})
+]],
+      {
+        i(1, 'state, setState'), -- Function name
+        i(2, 'type'), -- Function parameters
+        i(3, 'state'), -- Function parameters
+      }
+    )
+  ),
+
+  -- experimental useState
+  --
+  --p
+
+  s(
+    'uss',
+    fmt(
+      [[
+const [{}, {}] = useState({});
+]],
+      {
+        i(1, 'example'), -- The state variable name
+        f(function(args)
+          local var = args[1][1]
+          return 'set' .. var:gsub('^%l', string.upper)
+        end, { 1 }), -- Automatically generates the setter name (e.g., setExample)
+        i(2, 'initialValue'), -- The initial state value
+      }
+    )
+  ),
 }
