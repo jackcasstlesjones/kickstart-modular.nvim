@@ -75,6 +75,8 @@ return {
       use_libuv_file_watcher = true,
     },
     window = {
+      width = 35,
+      auto_expand_width = false,
       mappings = {
         ['l'] = 'open',
         ['h'] = 'close_node',
