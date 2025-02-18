@@ -9,7 +9,7 @@
 
 ## File Search & Editing
 
-- `s` uses [Flash](https://github.com/folke/flash.nvim) to search text inside a file.
+- `s` uses [flash](https://github.com/folke/flash.nvim) to search text inside a file.
 - `f` or `F` replaces the default `find` motions using [eyeliner](https://github.com/jinh0/eyeliner.nvim).
 - `<leader>u` to see an undo history using [telescope-undo](https://github.com/debugloop/telescope-undo.nvim).
 - `<leader>l` to insert inside the last double quote on current line (for Tailwind).
@@ -19,6 +19,7 @@
 - `Q` to quit all Neovim instances.
 - Format on save, or with `<leader>mp`, using [conform](https://github.com/stevearc/conform.nvim) and Prettier.
 - Use the [emmet-language-server](https://github.com/olrtg/emmet-language-server) just like VSCode.
+- Highlight a selection in Visual Mode and use `S` followed by a parentheses or bracket to wrap that character around the selection using [surround](https://github.com/kylechui/nvim-surround/blob/main/lua/nvim-surround/config.lua)
 
 ## UI
 
