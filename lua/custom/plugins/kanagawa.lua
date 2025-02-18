@@ -21,6 +21,9 @@ return {
       overrides = function(colors) -- add/modify highlights
         return {
           LineNr = { bg = 'none' },
+          EyelinerPrimary = { fg = colors.palette.surimiOrange, bold = true },
+          EyelinerSecondary = { fg = colors.palette.springViolet1, bold = true },
+          EyelinerDimmed = { fg = colors.palette.fujiGray, blend = 90 }, -- Medium gray
         }
       end,
       theme = 'dragon', -- Load "wave" theme when 'background' option is not set
