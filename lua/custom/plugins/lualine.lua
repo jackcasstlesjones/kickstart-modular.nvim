@@ -1,5 +1,6 @@
 return {
   {
+
     'nvim-lualine/lualine.nvim',
     enabled = true,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -12,7 +13,7 @@ return {
       require('lualine').setup {
         options = {
           icons_enabled = true,
-          theme = 'auto',
+          theme = 'powerline_dark',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           disabled_filetypes = {
@@ -22,7 +23,7 @@ return {
           ignore_focus = {},
           always_divide_middle = true,
           always_show_tabline = true,
-          globalstatus = false,
+          globalstatus = true,
           refresh = {
             statusline = 100,
             tabline = 100,
