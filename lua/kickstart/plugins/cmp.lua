@@ -113,6 +113,10 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
         },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
       }
     end,
   },
