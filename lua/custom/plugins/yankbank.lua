@@ -5,7 +5,7 @@ return {
     config = function()
       require('yankbank').setup {
 
-        sep = '',
+        sep = '#######################################',
         persist_type = 'sqlite',
 
         vim.keymap.set('n', '<leader>p', '<cmd>YankBank<CR>', { noremap = true }),
