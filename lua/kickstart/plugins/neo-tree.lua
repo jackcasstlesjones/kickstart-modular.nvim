@@ -76,6 +76,7 @@ return {
     },
     window = {
       width = 35,
+      position = 'right',
       auto_expand_width = false,
       mappings = {
         ['l'] = 'open',
