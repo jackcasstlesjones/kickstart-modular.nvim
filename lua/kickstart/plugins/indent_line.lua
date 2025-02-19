@@ -35,6 +35,16 @@ return {
           show_start = true,
           show_end = true,
         },
+        indent = {
+          -- Here are some different characters you can try:
+          -- char = "▎", -- Thicker line
+          char = '│', -- Thin line
+          -- char = "⎸", -- Very thin line
+          -- char = "▏", -- Slightly thinner than ▎
+          -- char = '▎', -- Choose the one you prefer
+        },
+
+        whitespace = { remove_blankline_trail = false },
       }
 
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
