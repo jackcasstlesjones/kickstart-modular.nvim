@@ -1,6 +1,6 @@
 return {
   'EdenEast/nightfox.nvim',
-  enabled = false,
+  enabled = true,
   priority = 1000, -- Ensures the colorscheme loads early
   config = function()
     require('nightfox').setup {
