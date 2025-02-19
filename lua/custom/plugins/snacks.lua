@@ -13,7 +13,7 @@ return {
       dashboard = { enabled = false },
       explorer = { enabled = false },
       lazygit = { enabled = true },
-      indent = { enabled = true },
+      indent = { enabled = false },
       input = { enabled = true },
       picker = { enabled = false },
       notifier = { enabled = true },

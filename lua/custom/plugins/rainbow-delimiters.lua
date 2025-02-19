@@ -1,7 +1,7 @@
 return {
   {
     'HiPhish/rainbow-delimiters.nvim', -- Plugin repository
-
+    enabled = true,
     config = function()
       local rainbow_delimiters = require 'rainbow-delimiters'
 
