@@ -1,6 +1,5 @@
 return {
   {
-
     'nvim-lualine/lualine.nvim',
     enabled = true,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -10,11 +9,35 @@ return {
         local path = vim.fn.getcwd()
         return vim.fn.fnamemodify(path, ':t')
       end
+
+      -- Optimized Git status check to reduce cursor flicker
+      local last_git_check = 0
+      local git_dirty = false
+
+      local function get_git_status()
+        local current_time = vim.loop.now()
+
+        -- Only check git status every 2 seconds
+        if current_time - last_git_check > 2000 then
+          last_git_check = current_time
+
+          local git_dir = vim.fn.systemlist('git rev-parse --git-dir 2>/dev/null')[1]
+          if not git_dir then
+            git_dirty = false
+            return false
+          end
+
+          local changes = vim.fn.systemlist 'git status --porcelain 2>/dev/null'
+          git_dirty = #changes > 0
+        end
+
+        return git_dirty
+      end
+
       require('lualine').setup {
         options = {
           icons_enabled = true,
           theme = 'nord',
-          -- theme = 'powerline_dark',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           disabled_filetypes = {
@@ -52,11 +75,8 @@ return {
               'branch',
               draw_empty = true,
               color = function()
-                local stats = vim.b.gitsigns_status_dict
-                local bg_color = stats and ((stats.added or 0) + (stats.removed or 0) + (stats.changed or 0) > 0 and '#ffc100' or '#98c379') or '#98c379'
-
                 return {
-                  bg = bg_color,
+                  bg = get_git_status() and '#ffc100' or '#81a1c1',
                   fg = '#000000',
                   gui = 'bold',
                 }
