@@ -57,8 +57,15 @@ return {
       pattern = '*.md',
       callback = function()
         if vim.g.moc_source then
-          vim.api.nvim_buf_set_lines(0, 0, 0, false, { '[[' .. vim.g.moc_source .. ']]' })
+          local current_date = os.date '%d %m %Y' -- day month year format
+          vim.api.nvim_buf_set_lines(0, 0, 0, false, {
+            '[[' .. vim.g.moc_source .. ']]', -- line 1: backlink
+            '', -- line 2: empty (cursor here)
+            '', -- line 3: extra empty line
+            current_date, -- line 4: date
+          })
           vim.g.moc_source = nil
+          vim.api.nvim_win_set_cursor(0, { 2, 0 })
         end
       end,
     })
