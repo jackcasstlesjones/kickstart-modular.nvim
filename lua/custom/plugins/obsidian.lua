@@ -7,6 +7,7 @@ return {
     'nvim-lua/plenary.nvim',
   },
   opts = {
+    disable_frontmatter = true, -- Prevents automatic frontmatter insertion
     workspaces = {
       {
         name = 'personal',
