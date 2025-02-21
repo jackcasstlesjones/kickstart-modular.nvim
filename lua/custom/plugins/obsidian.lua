@@ -30,6 +30,10 @@ return {
         error 'Note title is required to create a new note!'
       end
     end,
+
+    follow_url_func = function(url)
+      vim.fn.jobstart { 'open', '-a', 'Arc', url }
+    end,
   },
   config = function(_, opts)
     local obsidian = require 'obsidian'
