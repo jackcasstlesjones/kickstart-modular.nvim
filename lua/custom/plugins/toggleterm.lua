@@ -1,7 +1,7 @@
 return {
   {
     'akinsho/toggleterm.nvim',
-    enabled = false,
+    enabled = true,
     version = '*',
     config = function()
       require('toggleterm').setup {
@@ -12,11 +12,9 @@ return {
           height = 30,
         },
       }
-      -- Add terminal mode escape binding
-      vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
     end,
     keys = {
-      { '<leader>tf', ':ToggleTerm direction=float<CR>', desc = 'Toggle floating terminal' },
+      { '<leader>tf', ':ToggleTerm<CR>', desc = 'Toggle terminal' }, -- Generic toggle
     },
   },
 }
