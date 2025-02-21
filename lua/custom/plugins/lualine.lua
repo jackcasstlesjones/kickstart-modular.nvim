@@ -34,9 +34,39 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = {
-            { get_project_root }, -- Show project root directory name
+            {
+              get_project_root,
+              color = {
+                bg = '#262E39', -- A nice blue from Nord theme
+                fg = '#ffffff',
+                gui = 'bold',
+              },
+              separator = {
+                right = '\u{e0b0}', -- Right-pointing arrow
+                left = '', -- Empty left separator since it's the first component
+              },
+              padding = { left = 1, right = 1 },
+            },
             'pwd', -- Show current working directory
-            'branch',
+            {
+              'branch',
+              draw_empty = true,
+              color = function()
+                local stats = vim.b.gitsigns_status_dict
+                local bg_color = stats and ((stats.added or 0) + (stats.removed or 0) + (stats.changed or 0) > 0 and '#ffc100' or '#98c379') or '#98c379'
+
+                return {
+                  bg = bg_color,
+                  fg = '#000000',
+                  gui = 'bold',
+                }
+              end,
+              separator = {
+                right = '', -- This creates the arrow effect
+                left = '', -- This allows the left component's arrow to show
+              },
+              padding = { left = 1, right = 1 },
+            },
             'diff',
             'diagnostics',
           },
