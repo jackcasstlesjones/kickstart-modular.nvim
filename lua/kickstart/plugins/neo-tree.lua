@@ -75,7 +75,7 @@ return {
       use_libuv_file_watcher = true,
     },
     window = {
-      width = 35,
+      width = 30,
       -- position = 'right',
       auto_expand_width = false,
       mappings = {
