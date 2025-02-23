@@ -122,4 +122,16 @@ const [{}, {}] = useState({});
       }
     )
   ),
+  --console log
+  s(
+    'cl',
+    fmt(
+      [[
+      console.log({})
+]],
+      {
+        i(1, 'log'),
+      }
+    )
+  ),
 }
