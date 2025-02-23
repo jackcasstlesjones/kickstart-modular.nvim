@@ -76,7 +76,8 @@ return {
               draw_empty = true,
               color = function()
                 return {
-                  bg = get_git_status() and '#ffc100' or '#81a1c1',
+                  -- bg = get_git_status() and '#ffc100' or '#81a1c1',
+                  bg = get_git_status() and '#ffc100' or '#a3be8c',
                   fg = '#000000',
                   gui = 'bold',
                 }
