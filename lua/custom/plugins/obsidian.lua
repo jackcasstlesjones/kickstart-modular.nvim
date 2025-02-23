@@ -35,43 +35,35 @@ return {
       vim.fn.jobstart { 'open', '-a', 'Arc', url }
     end,
   },
+
   config = function(_, opts)
     local obsidian = require 'obsidian'
     obsidian.setup(opts)
 
-    -- Wrapper function for following links that stores the MOC source
+    -- Always store the source filename before following the link
     local function follow_link_with_source()
-      -- Get the current note's filename (e.g. "moc-hiking.md" or "moc-travel.md")
       local current_note = vim.fn.expand '%:t'
-      -- Only store if it starts with "moc-"
-      if current_note:match '^moc%-' then
-        vim.g.moc_source = current_note
-      else
-        vim.g.moc_source = nil
-      end
-      -- Call the Obsidian command to follow the link
+      vim.g.creation_source = current_note -- now set unconditionally
       vim.cmd 'ObsidianFollowLink'
     end
 
-    -- Map the custom follow-link command using a function callback
-    vim.keymap.set('n', '<leader>ol', follow_link_with_source, { noremap = true, silent = true })
+    vim.keymap.set('n', 'ol', follow_link_with_source, { noremap = true, silent = true })
 
-    -- Autocommand to insert the backlink at the top of newly created Markdown files
     vim.api.nvim_create_autocmd('BufNewFile', {
       pattern = '*.md',
       callback = function()
-        if vim.g.moc_source then
-          local current_date = os.date '%d/%m/%Y' -- day month year format
-          vim.api.nvim_buf_set_lines(0, 0, 0, false, {
-            '[[' .. vim.g.moc_source .. ']]', -- line 1: backlink
-            '', -- line 2: empty (cursor here)
-            '', -- line 3: extra empty line
-            '---',
-            current_date, -- line 4: date
-          })
-          vim.g.moc_source = nil
-          vim.api.nvim_win_set_cursor(0, { 2, 0 })
+        local current_date = os.date '%d/%m/%Y' -- day/month/year format
+        local lines = {}
+        if vim.g.creation_source then
+          table.insert(lines, '[[' .. vim.g.creation_source .. ']]')
+          vim.g.creation_source = nil
         end
+        table.insert(lines, '')
+        table.insert(lines, '')
+        table.insert(lines, '---')
+        table.insert(lines, current_date)
+        vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
+        vim.api.nvim_win_set_cursor(0, { 2, 0 })
       end,
     })
   end,
