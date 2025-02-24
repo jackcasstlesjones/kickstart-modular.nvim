@@ -8,5 +8,8 @@ return {
     'nvim-telescope/telescope.nvim', -- optional
     'neovim/nvim-lspconfig', -- optional
   },
+  keys = {
+    { '<leader>tws', '<cmd>TailwindSort<cr>', desc = 'Tailwind Sort' },
+  },
   opts = {}, -- your configuration
 }
