@@ -60,12 +60,12 @@ return {
             {
               get_project_root,
               color = {
-                bg = '#b48ead',
-                fg = '#000000',
+                bg = '#d8dee9',
+                fg = '#3b4252',
                 gui = 'bold',
               },
               separator = {
-                right = '\u{e0b0}', -- Right-pointing arrow
+                right = '', -- Right-pointing arrow
                 left = '', -- Empty left separator since it's the first component
               },
               padding = { left = 1, right = 1 },
@@ -92,7 +92,7 @@ return {
               'diff',
               color = function()
                 return {
-                  bg = '#3b4252',
+                  bg = '#4c566a',
                 }
               end,
               separator = {
@@ -114,7 +114,7 @@ return {
               color = function()
                 return {
                   -- bg = get_git_status() and '#ffc100' or '#81a1c1',
-                  bg = '#d08770',
+                  bg = '#b48ead',
                   fg = '#000000',
                   gui = 'bold',
                 }
