@@ -47,7 +47,7 @@ return {
       vim.cmd 'ObsidianFollowLink'
     end
 
-    vim.keymap.set('n', 'ol', follow_link_with_source, { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>o', follow_link_with_source, { noremap = true, silent = true })
 
     vim.api.nvim_create_autocmd('BufNewFile', {
       pattern = '*.md',
