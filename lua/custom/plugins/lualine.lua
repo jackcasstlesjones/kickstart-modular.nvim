@@ -60,8 +60,8 @@ return {
             {
               get_project_root,
               color = {
-                bg = '#262E39', -- A nice blue from Nord theme
-                fg = '#ffffff',
+                bg = '#b48ead',
+                fg = '#000000',
                 gui = 'bold',
               },
               separator = {
@@ -88,13 +88,44 @@ return {
               },
               padding = { left = 1, right = 1 },
             },
-            'diff',
+            {
+              'diff',
+              color = function()
+                return {
+                  bg = '#3b4252',
+                }
+              end,
+              separator = {
+                right = '', -- This creates the arrow effect
+                left = '', -- This allows the left component's arrow to show
+              },
+            },
             'diagnostics',
           },
           lualine_c = {
             'filename',
           },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_x = {
+            'encoding',
+            'fileformat',
+            {
+              'filetype',
+              draw_empty = true,
+              color = function()
+                return {
+                  -- bg = get_git_status() and '#ffc100' or '#81a1c1',
+                  bg = '#d08770',
+                  fg = '#000000',
+                  gui = 'bold',
+                }
+              end,
+              separator = {
+                left = '', -- This creates the arrow effect
+                right = '', -- This allows the left component's arrow to show
+              },
+              padding = { left = 1, right = 1 },
+            },
+          },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
         },
