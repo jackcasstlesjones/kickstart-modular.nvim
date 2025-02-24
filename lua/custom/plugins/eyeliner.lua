@@ -1,7 +1,7 @@
 return {
   {
     'jinh0/eyeliner.nvim',
-    enabled = true,
+    enabled = false,
     config = function()
       require('eyeliner').setup {
         -- show highlights only after keypress
