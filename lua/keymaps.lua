@@ -57,6 +57,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yankin
 vim.keymap.set({ 'n', 'v' }, 'c', '"_c', { desc = 'Remove yanking behaviour from Change' })
 -- vim: ts=2 sts=2 sw=2 et
 vim.keymap.set({ 'n' }, '<CR>', 'i<CR>', { desc = 'New line from Normal Mode' })
+
+vim.keymap.set('n', '<leader>a', 'ggVGy', { desc = 'Copy all' })
+
 --
 vim.keymap.set('n', '<leader>td', function()
   if vim.diagnostic.is_enabled() then
