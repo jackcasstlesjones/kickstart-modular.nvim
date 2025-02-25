@@ -1,7 +1,7 @@
 return {
   {
     'rasulomaroff/reactive.nvim',
-    enabled = true,
+    enabled = false,
 
     opts = {
       builtin = {
