@@ -7,7 +7,7 @@ return {
         copy = '#ffc100',
         delete = '#c75c6a',
         insert = '#5e81ac',
-        visual = '#d08770',
+        visual = '#a3be8c',
       },
 
       -- Set opacity for cursorline and number background
