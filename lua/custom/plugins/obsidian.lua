@@ -7,6 +7,14 @@ return {
     'nvim-lua/plenary.nvim',
   },
   opts = {
+    mappings = { -- Toggle check-boxes.
+      ['<leader>ch'] = {
+        action = function()
+          return require('obsidian').util.toggle_checkbox()
+        end,
+        opts = { buffer = true },
+      },
+    },
     disable_frontmatter = true, -- Prevents automatic frontmatter insertion
     workspaces = {
       {
@@ -47,7 +55,7 @@ return {
       vim.cmd 'ObsidianFollowLink'
     end
 
-    vim.keymap.set('n', '<leader>o', follow_link_with_source, { noremap = true, silent = true })
+    vim.keymap.set('n', '<cr>', follow_link_with_source, { noremap = true, silent = true })
 
     vim.api.nvim_create_autocmd('BufNewFile', {
       pattern = '*.md',
