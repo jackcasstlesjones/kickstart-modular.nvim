@@ -1,6 +1,7 @@
 -- For `plugins/markview.lua` users.
 return {
   'OXY2DEV/markview.nvim',
+  enabled = false,
   lazy = false,
   config = function()
     local presets = require 'markview.presets'
