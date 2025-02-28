@@ -27,13 +27,6 @@ return {
     keys = {
       -- Top Pickers & Explorer
       {
-        '<leader>e',
-        function()
-          Snacks.explorer()
-        end,
-        desc = 'File Explorer',
-      },
-      {
         '<leader>g',
         function()
           Snacks.lazygit()
