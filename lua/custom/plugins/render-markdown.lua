@@ -9,7 +9,12 @@ return {
     ---@type render.md.UserConfig
 
     config = function()
+      -- Set all heading backgrounds and foregrounds to orange
       require('render-markdown').setup {
+        anti_conceal = {
+          -- This enables hiding any added text on the line the cursor is on
+          enabled = false,
+        },
         heading = {
           -- Turn on / off heading icon & background rendering
           enabled = true,
@@ -93,6 +98,44 @@ return {
           custom = {},
         },
       }
+      local colors = {
+        h1_bg = '#7d2e33', -- Much Darker H1
+        h2_bg = '#6f3b2f', -- Much Darker H2
+        h3_bg = '#5f4a22', -- Much Darker H3 (darker than before)
+        h4_bg = '#4a2c44', -- Slightly Darker H4
+        h5_bg = '#3b6a48', -- Slightly Darker H5
+        h6_bg = '#1a1f2a', -- Much Darker H6
+        text_fg = '#ffffff', -- White text
+      }
+      -- Backgrounds
+      local bgHighlights = {
+        RenderMarkdownH1Bg = colors.h1_bg,
+        RenderMarkdownH2Bg = colors.h2_bg,
+        RenderMarkdownH3Bg = colors.h3_bg,
+        RenderMarkdownH4Bg = colors.h4_bg,
+        RenderMarkdownH5Bg = colors.h5_bg,
+        RenderMarkdownH6Bg = colors.h6_bg,
+      }
+
+      -- Foregrounds (text)
+      local fgHighlights = {
+        'RenderMarkdownH1',
+        'RenderMarkdownH2',
+        'RenderMarkdownH3',
+        'RenderMarkdownH4',
+        'RenderMarkdownH5',
+        'RenderMarkdownH6',
+      }
+
+      -- Apply background highlights
+      for hl, color in pairs(bgHighlights) do
+        vim.api.nvim_set_hl(0, hl, { bg = color, blend = 50 }) -- Apply blend for transparency
+      end
+
+      -- Apply foreground (text) highlights
+      for _, hl in ipairs(fgHighlights) do
+        vim.api.nvim_set_hl(0, hl, { fg = colors.text_fg })
+      end
     end,
     opts = {},
   },
