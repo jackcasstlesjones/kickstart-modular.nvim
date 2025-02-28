@@ -112,6 +112,9 @@ return {
           staged = '󰱒',
         },
       },
+      folder = {
+        highlight = 'NeoTreeDirectoryIcon', -- Set folder icon highlight
+      },
     },
   },
   config = function(_, opts)
@@ -125,6 +128,7 @@ return {
       { event = events.FILE_MOVED, handler = on_move },
       { event = events.FILE_RENAMED, handler = on_move },
     })
+    vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = '#ffc100', bold = true }) -- Set custom color (yellow) and bold
     require('neo-tree').setup(opts)
     vim.api.nvim_create_autocmd('TermClose', {
       pattern = '*lazygit',
