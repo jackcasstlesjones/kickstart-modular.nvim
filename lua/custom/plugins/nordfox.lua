@@ -5,7 +5,7 @@ return {
   config = function()
     require('nightfox').setup {
       options = {
-        transparent = false, -- Enable transparency
+        transparent = true, -- Enable transparency
         terminal_colors = true, -- Set terminal colors
         dim_inactive = false, -- Keep inactive panes the same
         styles = {
