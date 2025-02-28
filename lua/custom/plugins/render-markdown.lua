@@ -26,7 +26,8 @@ return {
           -- The number of '#' in the heading determines the 'level'
           -- The 'level' is used to index into the list using a cycle
           -- If the value is a function the input context contains the nesting level of the heading within sections
-          icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
+          -- icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
+          icons = { '', '', '', '', '', '' },
           -- Determines how icons fill the available space:
           --  right:   '#'s are concealed and icon is appended to right side
           --  inline:  '#'s are concealed and icon is inlined on left side
@@ -100,9 +101,9 @@ return {
       }
       local colors = {
         h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)
-        h2_bg = '#53362D', -- Darkened Nord Orange (original #D08770)
+        h2_bg = '#414C38', -- Darkened Nord Green (original #A3BE8C)
         h3_bg = '#5E5138', -- Much Darkened Nord Yellow (original #EBCB8B)
-        h4_bg = '#414C38', -- Darkened Nord Green (original #A3BE8C)
+        h4_bg = '#53362D', -- Darkened Nord Orange (original #D08770)
         h5_bg = '#483945', -- Darkened Nord Purple (original #B48EAD)
         h6_bg = '#263445', -- Darkened Nord Blue (original #5E81AC)
         text_fg = '#ffffff', -- Your foreground text color
