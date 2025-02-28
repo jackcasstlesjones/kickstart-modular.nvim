@@ -64,7 +64,7 @@ return {
 
     -- Always store the source filename before following the link
     local function follow_link_with_source()
-      local current_note = vim.fn.expand '%:t'
+      local current_note = vim.fn.expand '%:t:r' -- :r removes the extension
       vim.g.creation_source = current_note -- now set unconditionally
       vim.cmd 'ObsidianFollowLink'
     end
@@ -82,10 +82,11 @@ return {
         end
         table.insert(lines, '')
         table.insert(lines, '')
+        table.insert(lines, '')
         table.insert(lines, '---')
         table.insert(lines, current_date)
         vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
-        vim.api.nvim_win_set_cursor(0, { 2, 0 })
+        vim.api.nvim_win_set_cursor(0, { 3, 0 })
       end,
     })
   end,
