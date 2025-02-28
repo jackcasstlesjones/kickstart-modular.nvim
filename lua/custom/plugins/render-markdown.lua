@@ -99,13 +99,13 @@ return {
         },
       }
       local colors = {
-        h1_bg = '#7d2e33', -- Much Darker H1
-        h2_bg = '#6f3b2f', -- Much Darker H2
-        h3_bg = '#5f4a22', -- Much Darker H3 (darker than before)
-        h4_bg = '#4a2c44', -- Slightly Darker H4
-        h5_bg = '#3b6a48', -- Slightly Darker H5
-        h6_bg = '#1a1f2a', -- Much Darker H6
-        text_fg = '#ffffff', -- White text
+        h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)
+        h2_bg = '#53362D', -- Darkened Nord Orange (original #D08770)
+        h3_bg = '#5E5138', -- Much Darkened Nord Yellow (original #EBCB8B)
+        h4_bg = '#414C38', -- Darkened Nord Green (original #A3BE8C)
+        h5_bg = '#483945', -- Darkened Nord Purple (original #B48EAD)
+        h6_bg = '#263445', -- Darkened Nord Blue (original #5E81AC)
+        text_fg = '#ffffff', -- Your foreground text color
       }
       -- Backgrounds
       local bgHighlights = {
