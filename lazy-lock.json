@@ -14,6 +14,7 @@
   "eyeliner.nvim": { "branch": "main", "commit": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
+  "focus.nvim": { "branch": "main", "commit": "0f51cb7ff2640737858249015b6af0ea6cb28904" },
   "gitsigns.nvim": { "branch": "main", "commit": "4c40357994f386e72be92a46f41fc1664c84c87d" },
   "grug-far.nvim": { "branch": "main", "commit": "3a8690461afac34c0e5bacb0f7b4bc3066aab665" },
   "hawtkeys.nvim": { "branch": "main", "commit": "261cc311d4abdc88decceca6dc1013faa14c56ea" },
