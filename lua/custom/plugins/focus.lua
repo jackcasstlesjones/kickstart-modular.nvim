@@ -51,5 +51,8 @@ return {
       -- callback where you can add custom code when the focus window closes
       on_close = function() end,
     },
+    keys = {
+      { '<leader>o', ':Focus<CR>', desc = 'Toggle Focus mode' },
+    },
   },
 }
