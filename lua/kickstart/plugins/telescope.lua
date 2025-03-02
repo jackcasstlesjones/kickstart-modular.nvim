@@ -92,6 +92,7 @@ return {
       local builtin = require 'telescope.builtin'
       -- vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find files' }) -- Changed to find_files
 
+      vim.keymap.set('n', '<leader>i', builtin.spell_suggest, { desc = 'Spelling Suggestions ' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       -- vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
