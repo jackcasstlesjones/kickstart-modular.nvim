@@ -15,6 +15,9 @@ return {
           -- This enables hiding any added text on the line the cursor is on
           enabled = false,
         },
+        bullet = {
+          icons = { '•', '◦', '◆', '◇' },
+        },
         heading = {
           -- Turn on / off heading icon & background rendering
           enabled = true,
@@ -99,6 +102,7 @@ return {
           custom = {},
         },
       }
+      vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#ffc100' }) -- Red color
       local colors = {
         h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)
         h2_bg = '#414C38', -- Darkened Nord Green (original #A3BE8C)
