@@ -14,6 +14,13 @@ return {
         end,
         opts = { buffer = true },
       },
+
+      ['<leader>ot'] = {
+        action = function()
+          return '<cmd>ObsidianTags<CR>'
+        end,
+        opts = { noremap = false, expr = true, buffer = true, desc = 'Obsidian Tags' },
+      },
     },
     disable_frontmatter = true, -- Prevents automatic frontmatter insertion
     workspaces = {
@@ -42,6 +49,20 @@ return {
 
     ui = {
       enable = false, -- disable additional UI features
+      hl_groups = {
+        -- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
+        ObsidianTodo = { bold = true, fg = '#f78c6c' },
+        ObsidianDone = { bold = true, fg = '#89ddff' },
+        ObsidianRightArrow = { bold = true, fg = '#f78c6c' },
+        ObsidianTilde = { bold = true, fg = '#ff5370' },
+        ObsidianImportant = { bold = true, fg = '#d73128' },
+        ObsidianBullet = { bold = true, fg = '#ffc100' },
+        ObsidianRefText = { underline = true, fg = '#c792ea' },
+        ObsidianExtLinkIcon = { fg = '#c792ea' },
+        ObsidianTag = { italic = true, fg = '#ffc100' },
+        ObsidianBlockID = { italic = true, fg = '#89ddff' },
+        ObsidianHighlightText = { bg = '#75662e' },
+      },
     },
 
     note_id_func = function(title)
@@ -84,6 +105,9 @@ return {
         table.insert(lines, '')
         table.insert(lines, '')
         table.insert(lines, '---')
+        table.insert(lines, '')
+        table.insert(lines, 'Tags:')
+        table.insert(lines, '')
         table.insert(lines, current_date)
         vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
         vim.api.nvim_win_set_cursor(0, { 3, 0 })
