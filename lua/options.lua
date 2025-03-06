@@ -71,6 +71,8 @@ vim.opt.confirm = true
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = false -- Show relative line numbers
 
+vim.o.conceallevel = 1 -- or 2, depending on your preference
+
 -- Remove tilda from empty lines
 vim.opt.fillchars = { eob = ' ' }
 -- vim: ts=2 sts=2 sw=2 et
