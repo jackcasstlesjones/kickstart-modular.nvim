@@ -66,6 +66,7 @@ return {
         { '<leader>s', group = 'Search' },
         -- { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = 'Toggle' },
+        { '<leader>o', group = 'Obsidian' },
         { '<leader>q', group = 'Sessions' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
