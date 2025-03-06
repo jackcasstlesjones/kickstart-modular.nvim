@@ -90,6 +90,8 @@ return {
       vim.cmd 'ObsidianFollowLink'
     end
 
+    vim.keymap.set('v', '<leader>on', 'c[[<C-r>"]]<Esc>', { noremap = true, expr = false, desc = 'New Link' })
+
     vim.keymap.set('n', '<cr>', follow_link_with_source, { noremap = true, silent = true })
 
     vim.api.nvim_create_autocmd('BufNewFile', {
