@@ -52,7 +52,7 @@ return {
       on_close = function() end,
     },
     keys = {
-      { '<leader>o', ':Focus<CR>', desc = 'Toggle Focus mode' },
+      { '<leader>oo', ':Focus<CR>', desc = 'Toggle Focus mode' },
     },
   },
 }
