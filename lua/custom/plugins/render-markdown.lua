@@ -18,6 +18,33 @@ return {
         bullet = {
           icons = { '•', '◦', '◆', '◇' },
         },
+
+        link = {
+          wiki = {
+            icon = '󱗖 ',
+            body = function()
+              return nil
+            end,
+            highlight = 'RenderMarkdownWikiLink',
+          },
+        },
+        -- Window options to use that change between rendered and raw view.
+        win_options = {
+          -- @see :h 'conceallevel'
+          conceallevel = {
+            -- Used when not being rendered, get user setting.
+            default = vim.api.nvim_get_option_value('conceallevel', {}),
+            -- Used when being rendered, concealed text is completely hidden.
+            rendered = 3,
+          },
+          -- @see :h 'concealcursor'
+          concealcursor = {
+            -- Used when not being rendered, get user setting.
+            default = vim.api.nvim_get_option_value('concealcursor', {}),
+            -- Used when being rendered, disable concealing text in all modes.
+            rendered = 'n', -- Conceal in normal, visual, and insert modes
+          },
+        },
         heading = {
           -- Turn on / off heading icon & background rendering
           enabled = true,
@@ -103,6 +130,7 @@ return {
         },
       }
       vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#ffc100' }) -- Red color
+      -- vim.api.nvim_set_hl(0, 'RenderMarkdownWikiLink', { fg = '#ffc100' }) -- Red color
       local colors = {
         h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)
         h2_bg = '#414C38', -- Darkened Nord Green (original #A3BE8C)
