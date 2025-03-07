@@ -8,6 +8,12 @@ return {
   },
   opts = {
     mappings = { -- Toggle check-boxes.
+      -- ['<cr>'] = {
+      --   action = function()
+      --     return require('obsidian').util.gf_passthrough()
+      --   end,
+      --   opts = { noremap = false, expr = true, buffer = true },
+      -- },
       ['<leader>ch'] = {
         action = function()
           return require('obsidian').util.toggle_checkbox()
@@ -21,6 +27,12 @@ return {
         end,
         opts = { noremap = false, expr = true, buffer = true, desc = 'Obsidian Tags' },
       },
+      ['<leader>oe'] = {
+        action = function()
+          return '<cmd>ObsidianTemplate<CR>'
+        end,
+        opts = { noremap = false, expr = true, buffer = true, desc = 'Obsidian Tags' },
+      },
     },
     disable_frontmatter = true, -- Prevents automatic frontmatter insertion
     workspaces = {
@@ -30,7 +42,8 @@ return {
       },
     },
     templates = {
-      folder = 'Templates',
+      folder = 'templates',
+      date_format = '%d/%m/%Y',
     },
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
@@ -82,6 +95,7 @@ return {
   config = function(_, opts)
     local obsidian = require 'obsidian'
     obsidian.setup(opts)
+    vim.keymap.set('v', '<leader>on', 'c[[<C-r>"]]<Esc>', { noremap = true, expr = false, desc = 'New Link' })
 
     -- Always store the source filename before following the link
     local function follow_link_with_source()
@@ -90,8 +104,6 @@ return {
       vim.cmd 'ObsidianFollowLink'
     end
 
-    vim.keymap.set('v', '<leader>on', 'c[[<C-r>"]]<Esc>', { noremap = true, expr = false, desc = 'New Link' })
-
     vim.keymap.set('n', '<cr>', follow_link_with_source, { noremap = true, silent = true })
 
     vim.api.nvim_create_autocmd('BufNewFile', {
@@ -99,11 +111,18 @@ return {
       callback = function()
         local current_date = os.date '%d/%m/%Y' -- day/month/year format
         local lines = {}
+
         if vim.g.creation_source then
-          table.insert(lines, '[[' .. vim.g.creation_source .. ']]')
+          -- Capitalize the first letter of each word
+          local capitalized_source = vim.g.creation_source:gsub('(%a)(%w*)', function(first, rest)
+            return first:upper() .. rest:lower()
+          end)
+
+          table.insert(lines, '[[' .. capitalized_source .. ']]')
           vim.g.creation_source = nil
         end
         table.insert(lines, '')
+        table.insert(lines, '# title')
         table.insert(lines, '')
         table.insert(lines, '')
         table.insert(lines, '---')
@@ -112,7 +131,7 @@ return {
         table.insert(lines, '')
         table.insert(lines, current_date)
         vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
-        vim.api.nvim_win_set_cursor(0, { 3, 0 })
+        vim.api.nvim_win_set_cursor(0, { 3, 3 })
       end,
     })
   end,
