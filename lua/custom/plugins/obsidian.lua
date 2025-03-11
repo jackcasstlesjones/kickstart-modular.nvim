@@ -127,6 +127,8 @@ return {
         table.insert(lines, '')
         table.insert(lines, '---')
         table.insert(lines, '')
+        table.insert(lines, 'Related:')
+        table.insert(lines, '')
         table.insert(lines, 'Tags:')
         table.insert(lines, '')
         table.insert(lines, current_date)
