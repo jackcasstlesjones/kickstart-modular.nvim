@@ -18,9 +18,6 @@ return {
         width = 30,
         signcolumn = 'no', -- Removes the left sign column
       },
-      filters = {
-        dotfiles = true,
-      },
       hijack_directories = {
         enable = false,
         auto_open = false,
