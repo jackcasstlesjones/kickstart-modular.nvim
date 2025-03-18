@@ -18,13 +18,36 @@ return {
         width = 30,
         signcolumn = 'no', -- Removes the left sign column
       },
-      git = { enable = false },
+      -- git = { enable = false },
       filters = {
         dotfiles = true,
       },
       hijack_directories = {
         enable = false,
         auto_open = false,
+      },
+      renderer = {
+        icons = {
+          glyphs = {
+            -- default = '📄', -- Default file icon
+            -- symlink = '🔗', -- Symbolic link
+            -- folder = {
+            --   arrow_closed = '', -- Arrow when folder is closed
+            --   arrow_open = '', -- Arrow when folder is open
+            --   default = '📁', -- Default folder icon
+            --   open = '📂', -- Open folder icon
+            --   empty = '🗀', -- Empty folder
+            --   empty_open = '🗁', -- Empty open folder
+            --   symlink = '🔗', -- Symlinked folder
+            --   symlink_open = '🔗📂', -- Symlinked open folder
+            -- },
+            git = {
+              unstaged = 'M',
+              staged = 'M',
+              untracked = '??',
+            },
+          },
+        },
       },
       on_attach = function(bufnr)
         local api = require 'nvim-tree.api'
@@ -42,6 +65,9 @@ return {
       end,
     }
 
+    vim.api.nvim_set_hl(0, 'NvimTreeGitDirtyIcon', { fg = '#CD5A68' }) -- Red color for unstaged
+    vim.api.nvim_set_hl(0, 'NvimTreeGitStagedIcon', { fg = '#9CBF87' }) -- Untracked files
+    vim.api.nvim_set_hl(0, 'NvimTreeGitNewIcon', { fg = '#CD5A68' }) -- Untracked files
     -- Ensure the tree opens on VimEnter
     vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
