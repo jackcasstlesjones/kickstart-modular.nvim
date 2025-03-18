@@ -18,7 +18,6 @@ return {
         width = 30,
         signcolumn = 'no', -- Removes the left sign column
       },
-      -- git = { enable = false },
       filters = {
         dotfiles = true,
       },
