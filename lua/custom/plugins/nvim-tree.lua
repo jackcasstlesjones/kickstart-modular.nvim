@@ -22,6 +22,11 @@ return {
         enable = false,
         auto_open = false,
       },
+      git = {
+        enable = true,
+        ignore = false,
+        timeout = 500,
+      },
       renderer = {
         icons = {
           glyphs = {
