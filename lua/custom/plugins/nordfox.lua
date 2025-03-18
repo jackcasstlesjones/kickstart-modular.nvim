@@ -3,7 +3,23 @@ return {
   enabled = true,
   priority = 1000, -- Ensures the colorscheme loads early
   config = function()
+    -- Define specs (including git changes)
+    local specs = {
+      all = {
+        git = {
+          add = '',
+          removed = '',
+          changed = '',
+          conflict = '',
+          ignored = '',
+        },
+      },
+    }
+
+    -- Set up nightfox with the custom specs
     require('nightfox').setup {
+      specs = specs, -- Pass the custom specs here
+
       options = {
         transparent = true, -- Enable transparency
         terminal_colors = true, -- Set terminal colors
@@ -23,7 +39,7 @@ return {
       },
     }
 
-    -- Set the colorscheme
+    -- Set the colorscheme to nordfox (or any other theme you want)
     vim.cmd 'colorscheme nordfox'
   end,
 }
