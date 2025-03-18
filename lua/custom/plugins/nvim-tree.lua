@@ -1,4 +1,9 @@
 local function open_nvim_tree()
+  local current_file = vim.fn.expand '%:t' -- Get the current file name
+
+  if current_file == 'home.md' then
+    return -- Don't open Nvim-Tree for these files
+  end
   require('nvim-tree.api').tree.open()
 end
 
