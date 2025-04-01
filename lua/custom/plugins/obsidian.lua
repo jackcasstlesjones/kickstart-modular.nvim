@@ -44,6 +44,11 @@ return {
     templates = {
       folder = 'templates',
       date_format = '%d/%m/%Y',
+      substitutions = {
+        day_of_week = function()
+          return os.date '%A'
+        end,
+      },
     },
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
