@@ -10,8 +10,8 @@ return {
   },
   keys = {
     { '<leader>tws', '<cmd>TailwindSort<cr>', desc = 'Tailwind Sort' },
-    { '<C-j>', '<cmd>TailwindNextClass<cr>', desc = 'Next Tailwind Class' },
-    { '<C-k>', '<cmd>TailwindPrevClass<cr>', desc = 'Previous Tailwind Class' },
+    -- { '<C-j>', '<cmd>TailwindNextClass<cr>', desc = 'Next Tailwind Class' },
+    -- { '<C-k>', '<cmd>TailwindPrevClass<cr>', desc = 'Previous Tailwind Class' },
   },
   opts = {}, -- your configuration
 }
