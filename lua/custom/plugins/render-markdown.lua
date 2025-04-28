@@ -130,6 +130,12 @@ return {
         },
       }
       vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#ffc100' }) -- Red color
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'markdown',
+        callback = function()
+          vim.api.nvim_set_hl(0, '@markup.strong', { fg = '#ebcb8b', bold = true })
+        end,
+      })
       -- vim.api.nvim_set_hl(0, 'RenderMarkdownWikiLink', { fg = '#ffc100' }) -- Red color
       local colors = {
         h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)
