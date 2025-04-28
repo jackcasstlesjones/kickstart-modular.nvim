@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save file' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>i', { desc = 'Save file insert' })
 vim.keymap.set('n', '<leader>q', ':qa<CR>', { desc = 'Quit ALl' })
 
@@ -56,7 +56,7 @@ vim.keymap.set('n', '<leader>l', '$F"i<space>', { desc = 'Insert at last quote o
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
 vim.keymap.set({ 'n', 'v' }, 'c', '"_c', { desc = 'Remove yanking behaviour from Change' })
 -- vim: ts=2 sts=2 sw=2 et
-vim.keymap.set({ 'n' }, '<CR>', 'i<CR>', { desc = 'New line from Normal Mode' })
+-- vim.keymap.set({ 'n' }, '<CR>', 'i<CR>', { desc = 'New line from Normal Mode' })
 
 vim.keymap.set('n', '<leader>a', 'ggVGy', { desc = 'Copy all' })
 
